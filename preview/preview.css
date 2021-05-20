@@ -1,0 +1,219 @@
+.sh-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: ghostwhite;
+  text-align: center;
+  z-index: 9050;
+  height: 35px;
+  border-style: solid;
+  border-width: thin;
+  border-color: lightgray;
+}
+.sh-menu-row {
+  width: 100%;
+  text-align: center;
+}
+.sh-block {
+  width: 100px;
+  display: inline-block;
+}
+
+.sh-button {
+  color: royalblue;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  border-right-style: groove;
+}
+
+.region {
+  border-style: dashed;
+  border-color: lightblue;
+  border-width: thin;
+}
+.region-menu {
+  width: 85px;
+  float: right;
+  position: relative;
+  z-index: 9000;
+
+}
+
+.region-menu-inner {
+  height: 32px;
+  vertical-align: middle;
+  display: table-cell;
+  position: absolute;
+  top: 0px;
+  width: 85px;
+  background-color: lightgrey;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.region-menu-item {
+  margin-right: 4px;
+  margin-left: 4px;
+  width: 32px;
+  display: inline-block;
+  padding-top: 7px;
+}
+
+.region-menu-item-icon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.region-edit-div {
+  z-index: 10000;
+  width: calc(100% - 40px);
+  height: 500px;
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  border-style: solid;
+  border-width: thin;
+  border-color: orangered;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  background: white;
+}
+
+.region-edit-iframe {
+  width: 100%;
+  height: calc(100% - 35px);
+  border: 0;
+}
+
+.region-edit-modal-subdiv {
+  border-style: solid;
+  border-width: thin;
+  height: 35px;
+  padding: 6px;
+  border-color: orangered;
+  background-color: white;
+}
+.region-edit-modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+  width: calc(100% - 50px);
+  font-size: large;
+  font-family: Arial,Arial,sans-serif;
+}
+
+.region-edit-modal-close-button {
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+  width: 15px;
+}
+
+.region-edit-modal-close-button:hover,
+.region-edit-modal-close-button:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.sh-modal {
+/*  display: none; *//* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.sh-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 1px;
+  border: 1px solid orangered;
+  width: 80%;
+  height: 90%;
+}
+
+.sh-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sh-col {
+  float: left;
+}
+
+
+/* Tooltip container */
+.sh-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.sh-tooltip .sh-tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.sh-tooltip .sh-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.sh-tooltip:hover .sh-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes menuCollapse {
+  from {
+    left:0px;
+  }
+
+  to {
+    left:100%;
+    display: none;
+  }
+}
+
+@keyframes menuExpand {
+  from {
+    left:100%;
+  }
+
+  to {
+    left:0px;
+  }
+}
