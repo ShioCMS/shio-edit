@@ -26,7 +26,17 @@
   font-family: Arial, sans-serif;
   text-transform: uppercase;
   border-right-style: groove;
+  border-width: thin;
 }
+
+.sh-menuItem {
+  color: royalblue;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  border-right-style: groove;
+  border-width: thin;
+}
+
 
 .region {
   border-style: dashed;
@@ -216,4 +226,52 @@
   to {
     left:0px;
   }
+}
+
+#div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+
+.sh-sub-menu-item-main .sh-sub-menu-item {
+  /* visibility: hidden; */
+  visibility: visible;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.sh-sub-menu-item-main .sh-sub-menu-item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.sh-sub-menu-item-main:hover .sh-sub-menu-item {
+  visibility: visible;
+  opacity: 1;
 }

@@ -99,7 +99,17 @@ function shPreviewEditUnMaximize() {
 
 function shPreviewPageMenu() {
     var shMenuSections = document.getElementById('shMenuSections');
-    shMenuSections.innerHTML = '<div class="sh-block sh-button" onclick="shPreviewMainMenu()">&lsaquo; Page</div>';
+    shMenuSections.innerHTML = `
+    <div class="sh-block sh-button" onclick="shPreviewMainMenu()">&lsaquo; Page</div>
+    <div class="sh-block sh-menuItem sh-sub-menu-item-main" onclick="shPreviewComponentList()" style="position:relative">Component
+    <div class="sh-sub-menu-item">
+    <ul style="list-style-type: none;padding:10px;text-align:left">
+    <li style="margin-bottom: 10px;"><img id="text_component" draggable="true" ondragstart="drag(event)" src="/preview/img/text_component.png"/> Text</li>
+    <li style="margin-bottom: 10px;"><img id="image_component" draggable="true" ondragstart="drag(event)" src="/preview/img/image_component.png"/> Image</li>
+    <li style="margin-bottom: 10px;"><img id="list_component" draggable="true" ondragstart="drag(event)" src="/preview/img/list_component.png"/> List</li>
+    </ul>
+    </div></div>
+    `;
     var regions = document.getElementsByClassName('regionMenu');
     Array.prototype.forEach.call(regions, function (region) {
         region.innerHTML = `<div style="float: right;display: inline-block;" class="row">
@@ -137,3 +147,20 @@ function shPreviewMainMenu() {
         region.innerHTML = '';
     });
 }
+
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var item = document.createElement('div');
+    item.innerHTML = data;
+    
+    ev.target.appendChild(item);
+  }
