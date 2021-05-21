@@ -43,6 +43,12 @@
   border-color: lightblue;
   border-width: thin;
 }
+
+.sh-component {
+  border-style: dashed;
+  border-color: green;
+  border-width: thin;
+}
 .region-menu {
   width: 85px;
   float: right;
@@ -274,4 +280,52 @@
 .sh-sub-menu-item-main:hover .sh-sub-menu-item {
   visibility: visible;
   opacity: 1;
+}
+
+.preview-button {
+  background: transparent url(/preview/img/preview-icon-sprite.png) scroll no-repeat 0 0;
+}
+
+.preview-small-button {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.preview-icon-delete {
+  background-position: -40px -262px;
+}
+
+.preview-icon-delete:hover {
+  background-position: -40px -282px;
+}
+
+.preview-icon-settings {
+  background-position: -60px -262px;
+}
+
+.preview-icon-settings:hover {
+  background-position: -60px -282px;
+}
+
+.preview-icon-pencil {
+  background-position: -20px -262px;
+}
+
+.preview-icon-pencil:hover {
+  background-position: -20px -282px;
+}
+
+.preview-drag-drop-button {
+  cursor: move;
+  width: 10px;
+  height: 30px;
+  background: url(/preview/img/drag_spot_dots.png) no-repeat scroll center center transparent;
+}
+.preview-drag-drop-button-div {
+  background-color: gray;
+}
+.preview-drag-drop-button-div:hover {
+  background-color: green;
 }
