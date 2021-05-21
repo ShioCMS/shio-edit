@@ -110,6 +110,10 @@ function shPreviewPageMenu() {
     </ul>
     </div></div>
     `;
+    addRegionMenu();
+}
+
+function addRegionMenu () {
     var regions = document.getElementsByClassName('regionMenu');
     Array.prototype.forEach.call(regions, function (region) {
         region.innerHTML = `<div style="float: right;display: inline-block;" class="row">
@@ -127,8 +131,6 @@ function shPreviewPageMenu() {
             </div>
         </div>`;
     });
-
-
 }
 function shPreviewDesignMenu() {
     var shMenuSections = document.getElementById('shMenuSections');
@@ -150,17 +152,40 @@ function shPreviewMainMenu() {
 
 function allowDrop(ev) {
     ev.preventDefault();
-  }
-  
-  function drag(ev) {
+}
+
+function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-  }
-  
-  function drop(ev) {
+}
+
+function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    var item = document.createElement('div');
-    item.innerHTML = data;
-    
-    ev.target.appendChild(item);
-  }
+   
+    if (data === 'text_component') {
+        var text = document.createElement('div');
+        text.innerHTML = `<div class="region">
+        <div class="regionMenu"></div>
+        <input type="text" value="hello world"></input>
+        </div>
+        `;
+        ev.target.appendChild(text);
+        addRegionMenu();
+    }
+    else if (data === 'image_component') {
+        var text = document.createElement('div');
+        text.innerHTML = `
+        <div class="region">
+        <div class="regionMenu"></div>
+        <img src="/preview/img/image_sample.png" style="width:10%;height:10%">
+        </div>
+        `;
+        ev.target.appendChild(text);
+        addRegionMenu();
+    }
+    else {
+        var item = document.createElement('div');
+        item.innerHTML = data;
+        ev.target.appendChild(item);
+    }
+}
